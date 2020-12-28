@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 import { Link } from 'react-router-dom';
+import { NavbarDiv } from './navbar.styled';
 
 const LINKS = [
   { to: '/', text: 'Home' },
@@ -8,7 +9,7 @@ const LINKS = [
 
 const Navbar = () => {
   return (
-    <div>
+    <NavbarDiv>
       <ul>
         {LINKS.map((item) => (
           <li key={item.to}>
@@ -16,7 +17,7 @@ const Navbar = () => {
           </li>
         ))}
       </ul>
-    </div>
+    </NavbarDiv>
   );
 };
 

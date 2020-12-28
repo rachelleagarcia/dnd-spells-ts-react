@@ -1,16 +1,17 @@
 import React from 'react';
 import Card from '../Card';
 import { useSpells } from '../../hooks/useSpells';
+import { CardGridSection } from './cardGrid.styled';
 
-interface CardGridProps {
+type CardGridProps = {
   data: any;
-}
+};
 
 const CardGrid = ({ data }: CardGridProps) => {
   const [favouriteSpells, dispatchFavourite]: any = useSpells();
 
   return (
-    <div>
+    <CardGridSection>
       {data.map((item: any) => {
         const isFavourite = favouriteSpells.includes(item.index);
 
@@ -32,7 +33,7 @@ const CardGrid = ({ data }: CardGridProps) => {
           />
         );
       })}
-    </div>
+    </CardGridSection>
   );
 };
 

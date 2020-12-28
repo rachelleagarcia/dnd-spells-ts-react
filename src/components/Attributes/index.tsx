@@ -1,34 +1,35 @@
 import React from 'react';
+import { AttributesSection } from './attributes.styled';
 
-interface AttributesProps {
+type AttributesProps = {
   material: string;
   classes: [{}];
   school: string;
-}
+};
 
 const Attributes = ({ material, classes, school }: AttributesProps) => {
   return (
-    <div>
+    <AttributesSection>
       <h2>Attributes</h2>
       <table>
         <tbody>
           {material ? (
             <tr>
-              <td>Materials</td>
+              <th>Materials</th>
               <td>{material}</td>
             </tr>
           ) : null}
           <tr>
-            <td>Classes</td>
+            <th>Classes</th>
             <td>{classes.map((item: any) => item.name)}</td>
           </tr>
           <tr>
-            <td>School</td>
+            <th>School</th>
             <td>{school}</td>
           </tr>
         </tbody>
       </table>
-    </div>
+    </AttributesSection>
   );
 };
 

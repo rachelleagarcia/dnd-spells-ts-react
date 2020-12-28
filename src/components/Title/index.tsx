@@ -1,17 +1,17 @@
 import React from 'react';
+import { TitleHeader } from './title.styled';
 
-interface TitleProps {
-  styles: string;
+type TitleProps = {
   title: string;
   highlight: string;
-}
+};
 
-const Title = ({ styles, title, highlight }: TitleProps) => {
+const Title = ({ title, highlight }: TitleProps) => {
   return (
-    <div className="center">
-      <h1 className={styles}>{title}</h1>
-      <h1 className="highlight inline">{highlight}</h1>
-    </div>
+    <TitleHeader>
+      <h1>{title}</h1>
+      <h2>{highlight}</h2>
+    </TitleHeader>
   );
 };
 

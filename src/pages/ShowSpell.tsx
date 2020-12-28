@@ -5,6 +5,7 @@ import Attributes from '../components/Attributes';
 import Description from '../components/Description';
 import Header from '../components/Header';
 import { useShowSpell } from '../hooks/useShowSpell';
+import { SpellSection } from './index.styled';
 
 const ShowSpell = () => {
   const { id } = useParams<{ id: string }>();
@@ -20,7 +21,7 @@ const ShowSpell = () => {
 
   return (
     <MainPageLayout>
-      <div>
+      <SpellSection>
         <Header
           title={spell.name}
           level={spell.level}
@@ -36,7 +37,7 @@ const ShowSpell = () => {
           classes={spell.classes}
           school={spell.school.name}
         />
-      </div>
+      </SpellSection>
     </MainPageLayout>
   );
 };

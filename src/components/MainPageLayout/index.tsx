@@ -1,10 +1,11 @@
 import React from 'react';
 import Navbar from '../Navbar';
+import { Main } from './main.styled';
 
 const MainPageLayout: React.FC = ({ children }) => (
-  <div>
+  <Main>
     <Navbar />
     {children}
-  </div>
+  </Main>
 );
 export default MainPageLayout;

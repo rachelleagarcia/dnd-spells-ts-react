@@ -1,6 +1,7 @@
 import React from 'react';
+import { SpellItems } from './header.styled';
 
-interface HeaderProps {
+type HeaderProps = {
   title: string;
   level: number;
   components: string;
@@ -8,7 +9,7 @@ interface HeaderProps {
   casting: string;
   duration: string;
   concentration: string;
-}
+};
 
 const Header = ({
   title,
@@ -20,9 +21,9 @@ const Header = ({
   concentration,
 }: HeaderProps) => {
   return (
-    <div>
+    <>
       <h1>{title}</h1>
-      <div>
+      <SpellItems>
         <div>
           <span className="center">Level {level}</span>
         </div>
@@ -45,8 +46,8 @@ const Header = ({
           )}
           <span>{duration}</span>
         </div>
-      </div>
-    </div>
+      </SpellItems>
+    </>
   );
 };
 

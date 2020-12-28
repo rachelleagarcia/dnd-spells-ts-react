@@ -4,6 +4,7 @@ import MainPageLayout from '../components/MainPageLayout';
 import CardGrid from '../components/CardGrid';
 import { apiGet } from '../utils';
 import { useLastQuery } from '../hooks/useLastQuery';
+import { SearchSection } from './index.styled';
 
 const renderResults = (results: string) => {
   if (results && results.length === 0) {
@@ -46,8 +47,8 @@ const Home = () => {
 
   return (
     <MainPageLayout>
-      <Title title="Find a" highlight="spell" styles="font-light inline pr-1" />
-      <div>
+      <Title title="Find a" highlight="spell" />
+      <SearchSection>
         <i className="fas fa-search icon"></i>
         <input
           type="text"
@@ -55,7 +56,7 @@ const Home = () => {
           onKeyDown={onKeyDown}
           value={input}
         />
-      </div>
+      </SearchSection>
       {renderResults(results)}
     </MainPageLayout>
   );

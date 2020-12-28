@@ -1,13 +1,14 @@
 import React from 'react';
+import { DescriptionSection } from './description.styled';
 
-interface DescriptionProps {
+type DescriptionProps = {
   desc: string;
   highLevel: string;
-}
+};
 
 const Description = ({ desc, highLevel }: DescriptionProps) => {
   return (
-    <div>
+    <DescriptionSection>
       <div>
         <h2>Description</h2>
         <p>{desc}</p>
@@ -17,7 +18,7 @@ const Description = ({ desc, highLevel }: DescriptionProps) => {
           </p>
         ) : null}
       </div>
-    </div>
+    </DescriptionSection>
   );
 };
 

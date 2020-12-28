@@ -37,11 +37,7 @@ const Favourites = () => {
       {isLoading && <div>Shows are still loading</div>}
       {error && <div>Error occured: {error}</div>}
       {!isLoading && !spells && (
-        <Title
-          title="No favourites added"
-          highlight="yet"
-          styles="font-light inline pr-1"
-        />
+        <Title title="No favourites added" highlight="yet" />
       )}
       {!isLoading && !error && spells && <CardGrid data={spells} />}
     </MainPageLayout>
