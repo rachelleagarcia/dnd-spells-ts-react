@@ -3,7 +3,10 @@ import { AttributesSection } from './attributes.styled';
 
 type AttributesProps = {
   material: string;
-  classes: [{}];
+  classes: Array<{
+    index: string;
+    name: string;
+  }>;
   school: string;
 };
 
@@ -21,7 +24,7 @@ const Attributes = ({ material, classes, school }: AttributesProps) => {
           ) : null}
           <tr>
             <th>Classes</th>
-            <td>{classes.map((item: any) => item.name)}</td>
+            <td>{classes}</td>
           </tr>
           <tr>
             <th>School</th>

@@ -8,15 +8,15 @@ import { SearchSection } from './index.styled';
 
 const renderResults = (results: string) => {
   if (results && results.length === 0) {
-    return <>No results</>;
+    return (
+      <div className="center">
+        <p>No results! Try again.</p>
+      </div>
+    );
   }
 
   if (results && results.length > 0) {
-    return (
-      <div>
-        <CardGrid data={results} />
-      </div>
-    );
+    return <CardGrid data={results} />;
   }
 
   return null;
@@ -27,7 +27,7 @@ const Home = () => {
   const [results, setResults] = useState('');
 
   const onSearch = () => {
-    apiGet(`spells/?name=${input}`).then((result) => {
+    apiGet(`spells/?search=${input}`).then((result) => {
       setResults(result.results);
     });
   };

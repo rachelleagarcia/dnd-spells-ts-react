@@ -1,22 +1,16 @@
 import React, { memo } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { NavbarDiv } from './navbar.styled';
-
-const LINKS = [
-  { to: '/', text: 'Home' },
-  { to: 'favourites', text: 'Favourites' },
-];
 
 const Navbar = () => {
   return (
     <NavbarDiv>
-      <ul>
-        {LINKS.map((item) => (
-          <li key={item.to}>
-            <Link to={item.to}>{item.text}</Link>
-          </li>
-        ))}
-      </ul>
+      <NavLink exact activeClassName="active" to="/">
+        Home
+      </NavLink>
+      <NavLink exact activeClassName="active" to="/favourites">
+        Favourites
+      </NavLink>
     </NavbarDiv>
   );
 };

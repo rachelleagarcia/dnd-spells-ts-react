@@ -2,7 +2,7 @@
 
 ### D&D Preview
 
-![DND Spell Search](https://github.com/rachelleagarcia/dnd-spells-ts-react/blob/main/public/images/DNDSpells.jpg?raw=true 'DND Spell Search Preview')
+![DND Spell Search](https://github.com/rachelleagarcia/dnd-spells-ts-react/blob/main/public/images/dnd-spells.jpg?raw=true 'DND Spell Search Preview')
 
 ### About D&D Spells
 

@@ -25,26 +25,26 @@ const Header = ({
       <h1>{title}</h1>
       <SpellItems>
         <div>
-          <span className="center">Level {level}</span>
+          <span>Level {level}</span>
         </div>
         <div>
-          <span className="center">{components}</span>
+          <span>{components}</span>
         </div>
         <div>
           <i className="fas fa-people-arrows"></i>
-          <span className="p-3">{range}</span>
+          <span className="m-1">{range}</span>
         </div>
         <div>
           <i className="fas fa-hourglass-half"></i>
-          <span className="p-3">{casting}</span>
+          <span className="m-1">{casting}</span>
         </div>
         <div>
-          {concentration ? (
-            <span className="invert">C</span>
+          {concentration === 'yes' ? (
+            <i className="fas fa-copyright"></i>
           ) : (
-            <i className="far fa-clock p-2"></i>
+            <i className="far fa-clock"></i>
           )}
-          <span>{duration}</span>
+          <span className="m-1">{duration.split('Up to')}</span>
         </div>
       </SpellItems>
     </>

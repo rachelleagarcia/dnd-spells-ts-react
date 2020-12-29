@@ -1,14 +1,16 @@
 import styled from 'styled-components';
 
 export const NavbarDiv = styled.div`
-  ul {
-    display: flex;
-    justify-content: flex-end;
-    padding: 24px 42px;
+  position: absolute;
+  top: 40px;
+  right: 16px;
+
+  a {
+    margin-right: 40px;
   }
 
-  li {
-    list-style-type: none;
-    margin-left: 40px;
+  .active {
+    font-weight: 600;
+    color: #32569b;
   }
 `;

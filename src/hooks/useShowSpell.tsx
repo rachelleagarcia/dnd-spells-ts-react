@@ -3,14 +3,58 @@
 // ------------------------------------
 import { useReducer, useEffect } from 'react';
 import { apiGet } from '../utils';
-import { reducer } from './reducers';
+
+const initialState: SpellState = {
+  spell: null,
+  isLoading: true,
+  error: undefined,
+};
+
+interface SpellState {
+  spell: any;
+  isLoading: boolean;
+  error?: string;
+}
+
+type SpellAction =
+  | {
+      type: 'FETCH_FAILED';
+      spell: undefined;
+      isLoading: boolean;
+      error: string;
+    }
+  | {
+      type: 'FETCH_SUCCESS';
+      spell: SpellState;
+      isLoading: boolean;
+      error: undefined;
+    };
+
+export const spellReducer = (state: SpellState, action: SpellAction) => {
+  switch (action.type) {
+    case 'FETCH_SUCCESS': {
+      return {
+        spell: action.spell,
+        isLoading: false,
+        error: undefined,
+      };
+    }
+
+    case 'FETCH_FAILED': {
+      return {
+        ...state,
+        isLoading: false,
+        error: action.error,
+      };
+    }
+
+    default:
+      return state;
+  }
+};
 
 export const useShowSpell = (spellId: string) => {
-  const [state, dispatch] = useReducer(reducer, {
-    spell: null,
-    isLoading: true,
-    error: null,
-  });
+  const [state, dispatch] = useReducer(spellReducer, initialState);
 
   useEffect(() => {
     let isMounted = true;
@@ -18,12 +62,22 @@ export const useShowSpell = (spellId: string) => {
     apiGet(`spells/${spellId}`)
       .then((results) => {
         if (isMounted) {
-          dispatch({ type: 'FETCH_SUCCESS', spell: results });
+          dispatch({
+            type: 'FETCH_SUCCESS',
+            spell: results,
+            isLoading: false,
+            error: undefined,
+          });
         }
       })
       .catch((err) => {
         if (isMounted) {
-          dispatch({ type: 'FETCH_FAIL', error: err.message });
+          dispatch({
+            type: 'FETCH_FAILED',
+            spell: undefined,
+            isLoading: false,
+            error: err.message,
+          });
         }
       });
 

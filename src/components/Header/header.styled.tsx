@@ -4,14 +4,17 @@ export const SpellItems = styled.div`
   display: flex;
 
   div {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 44px;
+    padding: 0 4px;
+    font-weight: 500;
     background: #e4e4e4;
     border: 1px solid #d3d3d3;
     border-radius: 10px;
-    width: 250px;
-    height: 44px;
-    display: flex;
-    align-items: center;
-    font-weight: 500;
   }
 
   div:not(:last-child) {
@@ -19,27 +22,12 @@ export const SpellItems = styled.div`
   }
 
   i {
-    padding: 12px;
+    position: absolute;
+    left: 16px;
     color: #212121;
   }
 
-  .p-3 {
-    padding-left: 32px;
-  }
-
-  .p-2 {
-    padding-right: 24px;
-  }
-
-  .center {
-    margin: 0 auto;
-  }
-
-  .invert {
-    background: #212121;
-    color: #fff;
-    padding: 12px;
-    border-radius: 10px 0 0 10px;
-    margin-right: 16px;
+  .m-1 {
+    margin-left: 16px;
   }
 `;

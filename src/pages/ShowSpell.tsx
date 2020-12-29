@@ -24,7 +24,7 @@ const ShowSpell = () => {
       <SpellSection>
         <Header
           title={spell.name}
-          level={spell.level}
+          level={spell.level_int}
           components={spell.components}
           range={spell.range}
           casting={spell.casting_time}
@@ -34,8 +34,8 @@ const ShowSpell = () => {
         <Description desc={spell.desc} highLevel={spell.higher_level} />
         <Attributes
           material={spell.material}
-          classes={spell.classes}
-          school={spell.school.name}
+          classes={spell.dnd_class}
+          school={spell.school}
         />
       </SpellSection>
     </MainPageLayout>

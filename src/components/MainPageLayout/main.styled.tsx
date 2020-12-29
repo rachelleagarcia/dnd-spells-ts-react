@@ -2,11 +2,10 @@ import styled from 'styled-components';
 
 export const Main = styled.div`
   margin: 16px;
+  padding: 0;
   font-family: 'Inter', sans-serif;
   font-size: 16px;
   color: #212121;
-  padding: 0;
-  margin: 0;
 
   a {
     text-decoration: none;
@@ -16,5 +15,9 @@ export const Main = styled.div`
   textarea:focus,
   input:focus {
     outline: none;
+  }
+
+  .center {
+    text-align: center;
   }
 `;

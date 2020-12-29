@@ -1,19 +1,20 @@
 import styled from 'styled-components';
 
 export const TitleHeader = styled.div`
+  margin-top: 180px;
   text-align: center;
-  margin-top: 80px;
 
   h1 {
     display: inline-flex;
-    font-size: 1.6em;
-    font-weight: 400;
     padding-right: 0.5rem;
+    font-size: 2rem;
+    font-weight: 300;
   }
 
   h2 {
     display: inline-flex;
-    font-size: 1.6em;
+    font-size: 2rem;
+    font-weight: 700;
     color: #32569b;
   }
 `;

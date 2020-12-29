@@ -2,7 +2,7 @@
 // Saving favourites to local storage
 // ------------------------------------
 import { useReducer, useEffect } from 'react';
-import { spellsReducer } from './reducers';
+import { faveReducer } from './favReducer';
 
 const usePersistedReducer = (
   reducer: any,
@@ -23,5 +23,5 @@ const usePersistedReducer = (
 };
 
 export const useSpells = (key = 'spells') => {
-  return usePersistedReducer(spellsReducer, [], key);
+  return usePersistedReducer(faveReducer, [], key);
 };
