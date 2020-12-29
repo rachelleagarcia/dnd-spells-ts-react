@@ -4,6 +4,7 @@ import MainPageLayout from '../components/MainPageLayout';
 import Title from '../components/Title';
 import { useSpells } from '../hooks/useSpells';
 import { apiGet } from '../utils';
+import { FavouritesSection } from './index.styled';
 
 const Favourites = () => {
   const [favourited]: any = useSpells();
@@ -34,12 +35,19 @@ const Favourites = () => {
 
   return (
     <MainPageLayout>
-      {isLoading && <div>Shows are still loading</div>}
-      {error && <div>Error occured: {error}</div>}
-      {!isLoading && !spells && (
-        <Title title="No favourites added" highlight="yet" />
-      )}
-      {!isLoading && !error && spells && <CardGrid data={spells} />}
+      <FavouritesSection>
+        {isLoading && <div>Shows are still loading</div>}
+        {error && <div>Error occured: {error}</div>}
+        {!isLoading && !spells && (
+          <Title title="No favourites added" highlight="yet" />
+        )}
+        {!isLoading && !error && spells && (
+          <>
+            <Title title="Welcome to" highlight="your favourites" />
+            <CardGrid data={spells} />
+          </>
+        )}
+      </FavouritesSection>
     </MainPageLayout>
   );
 };

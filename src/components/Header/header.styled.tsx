@@ -30,4 +30,12 @@ export const SpellItems = styled.div`
   .m-1 {
     margin-left: 16px;
   }
+
+  @media (max-width: 1000px) {
+    display: initial;
+
+    div {
+      margin-top: 16px;
+    }
+  }
 `;
