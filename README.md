@@ -23,5 +23,4 @@ I developed the application using the following tools and technologies:
 - TypeScript
 - React
 - APIs
-- Styled Components
-- CSS3
+- Styled Components / CSS-in-JS
